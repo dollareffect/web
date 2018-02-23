@@ -33,6 +33,7 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
     "copy-webpack-plugin": "^4.4.1",
+    "imagemin-mozjpeg": "^7.0.0",
     "imagemin-webpack-plugin": "^2.0.0",
     "webpack": "^3.11.0",
     "webpack-dev-server": "^2.11.1"

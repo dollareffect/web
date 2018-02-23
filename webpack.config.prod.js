@@ -1,5 +1,8 @@
 const path = require('path');
 const webpack = require('webpack');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const ImageminPlugin = require('imagemin-webpack-plugin').default;
+const imageminMozjpeg = require('imagemin-mozjpeg');
 
 module.exports = {
   devtool: 'source-map',
@@ -39,9 +42,18 @@ module.exports = {
   },
   plugins: [
     new CopyWebpackPlugin([{
-      from: path.resolve(__dirname, 'src/frontend/public/img/')
+      from: path.resolve(__dirname, 'src/frontend/public/img/'),
+      to: "img/"
     }]),
-    new ImageminPlugin({ test: /\.(jpe?g|png|gif|svg)$/i })
+    new ImageminPlugin({
+      test: /\.(jpe?g|png|gif|svg)$/i,
+      plugins: [
+        imageminMozjpeg({
+          quality: 80,
+          progressive: true
+        })
+      ]
+    })
   ],
   devtool: 'inline-source-map'
 };
