@@ -1,15 +1,23 @@
 const path = require('path');
 const webpack = require('webpack');
+// const autoprefixer = require('autoprefixer');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const imageminMozjpeg = require('imagemin-mozjpeg');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
+const ETP = new ExtractTextPlugin({
+  filename: 'css/main.css',
+  allChunks: true,
+});
 
 module.exports = {
   devtool: 'source-map',
-  entry: path.resolve(__dirname, 'src/frontend/app') + '/index.js',
+  // entry: path.resolve(__dirname, 'src/frontend/app') + '/index.js',
+  entry: path.resolve(__dirname, 'src/frontend/public/js/') + '/main.js',
   output: {
-    path: path.resolve(__dirname, '__bundle__'),
-    filename: 'bundle.js'
+    path: path.resolve(__dirname, 'docs/'),
+    filename: 'js/bundle.js'
   },
   module: {
     rules: [
@@ -24,57 +32,36 @@ module.exports = {
         }
       },
       {
-        test: /\.scss$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[name].css',
-              outputPath: path.resolve(__dirname, '__bundle__/css/'),
-            }
-          },
-          {
-            loader: 'extract-loader'
-          },
-          {
-            loader: "css-loader",
-            options: {
-              sourceMap: true
-            }
-          },
-          {
-            loader: 'postcss-loader',
-            options: {
-              plugins: () => [require('autoprefixer')],
-              sourceMap: true
-            }
-          },
-          {
-            loader: "sass-loader",
-            options: {
-              sourceMap: true
-            }
-          }
-        ]
+        test: /\.(sass|scss)$/i,
+        use: ETP.extract({
+          fallback: 'style-loader',
+          use: [
+            {
+              loader: 'css-loader',
+              options: { minimize: true }
+            },
+            {
+              loader: 'postcss-loader',
+              options: {
+                plugins: [require('autoprefixer')()]
+              }
+            },
+            'sass-loader'
+          ]
+        })
       }
     ]
   },
   resolve: {
     extensions: ['.js', '.jsx']
   },
-  devServer: {
-    historyApiFallback: true,
-    contentBase: "src/frontend/public",
-    publicPath: "/__bundle__/",
-    port: 9000,
-    hot: true,
-    inline: true,
-    watchContentBase: true,
-    watchOptions: {
-      ignored: /(node_modules|bower_components)/
-    }
-  },
   plugins: [
+    ETP,
+    new webpack.optimize.UglifyJsPlugin({ minimize: true }),
+    new CopyWebpackPlugin([{
+      from: path.resolve(__dirname, 'src/frontend/public/index.html'),
+      to: "index.html"
+    }]),
     new CopyWebpackPlugin([{
       from: path.resolve(__dirname, 'src/frontend/public/img/'),
       to: "img/"
