@@ -4,7 +4,7 @@ const webpack = require('webpack');
 module.exports = {
   devtool: 'source-map',
   entry: [
-    path.resolve(__dirname, 'src/frontend/app') + '/index.js',
+    entry: path.resolve(__dirname, 'src/frontend/public/js/') + '/main.js',
     path.resolve(__dirname, 'src/frontend/scss') + '/main.scss',
   ],
   output: {
@@ -65,7 +65,7 @@ module.exports = {
   devServer: {
     historyApiFallback: true,
     contentBase: "src/frontend/public",
-    publicPath: "/__bundle__/",
+    publicPath: "/docs/",
     port: 9000,
     hot: true,
     inline: true,
