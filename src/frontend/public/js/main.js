@@ -157,28 +157,3 @@ $(document).ready(function () {
     $("#modalVideo").on("shown.bs.modal", playVideo);
     $("#modalVideo").on("hidden.bs.modal", pauseVideo);
 });
-
-
-function onYouTubeIframeAPIReady() {
-    window.player = new YT.Player('youtubeVideo', {
-        events: {
-            'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange
-        }
-    });
-}
-function onPlayerReady(event) {
-    window.player = event.target;
-}
-
-function onPlayerStateChange(event) {
-    window.player = event.target;
-}
-
-function playVideo() {
-    window.player.playVideo();
-}
-
-function pauseVideo() {
-    window.player.pauseVideo();
-}
