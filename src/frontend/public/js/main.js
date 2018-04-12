@@ -1,5 +1,7 @@
 "use strict";
 
+import '../../scss/main.scss';
+
 $(document).ready(function () {    
     var BASE_URL = "https://dollar-effect.appspot.com/api/v1";
     // var BASE_URL = "http://localhost:8080/api/v1";
