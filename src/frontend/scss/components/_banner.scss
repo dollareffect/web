@@ -27,7 +27,7 @@
         right: 0;
         position: absolute;
         background-size: cover;
-        background-image: url('/img/hero-image.jpg');
+        background-image: url(/web/img/hero-image.jpg/web);
 
         @media (max-width: 1024px) {
             right: -50px;
