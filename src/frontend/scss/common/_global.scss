@@ -1,0 +1,54 @@
+body {
+    font-family: $primary-font;
+    color: rgba(16,53,83,0.8);
+    line-height: 25px;
+}
+
+.underline {
+    position: relative;
+    color: inherit;
+
+    &:after {
+        content: "";
+        position: absolute;
+        left: 0px;
+        bottom: 8px;
+        width: 100%;
+        height: 8px;
+        z-index: -1;
+        background: linear-gradient(180deg, #A1F2E9 0%, #68E0CF 100%);
+    }
+}
+
+.de-logo {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: rgba(16,54,83,0.57);
+    line-height: 18px;
+    letter-spacing: 4px;
+
+    .brand-color {
+        color: #67e0cf;
+    }
+}
+
+.bg-squares {
+    background: url(/img/squares.svg), url(/img/squares-reverse.svg);
+    background-repeat: no-repeat;
+    background-position: left center, right center;
+}
+
+hr {
+    margin: 0;
+    border-width: 2px;
+    border-color: $hr-color;
+}
+ 
+.hidden {
+    display: none;
+}
+
+.error {
+    border: 1px solid rgba(255, 0, 0, 0.5) !important;
+}

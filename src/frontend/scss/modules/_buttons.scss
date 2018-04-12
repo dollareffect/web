@@ -1,0 +1,86 @@
+.btn {
+    height: 50px;
+    font-size: $base-font-size;
+    font-family: $primary-font;
+    padding: 15px 16px;
+    font-weight: 500;
+    min-width: 160px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 21px;
+    font-size: 14px;
+}
+
+.btn-primary {
+
+    color: #fff;
+    border-radius: 24.5px;
+    background-image: linear-gradient(to right, #25aae1 0%, #68E0CF 51%, #25aae1 100%);
+    box-shadow: 0 -2px 13px 0 rgba(14,70,114,0.07), 0 8px 15px 0 rgba(32,156,255,0.3);
+    background-size: 200% auto;
+    border: 0px;
+    padding: 15px 60px;
+
+    -moz-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+
+    &:hover, &:focus, &:focus:active {
+        background-image: linear-gradient(to right, #25aae1 0%, #68E0CF 51%, #25aae1 100%) !important;
+        box-shadow: 0 -2px 13px 0 rgba(14,70,114,0.07), 0 8px 15px 0 rgba(32,156,255,0.3) !important;
+        background-position: right center;
+        -moz-transition: all .5s ease-in-out;
+        -o-transition: all .5s ease-in-out;
+        -webkit-transition: all .5s ease-in-out;
+        transition: all .5s ease-in-out;
+    }
+
+
+    &.-filled {
+        background: $label-text-color;
+
+        &:hover, &:focus, &:focus:active {
+            background: darken($label-text-color, 10) !important;
+        }    
+    }
+}
+
+.btn-link {
+    color: $label-text-color;
+
+    &:hover, &:focus, &:focus:hover, &:visited {
+        color: darken($label-text-color, 10);
+        text-decoration: none;
+    }
+}
+
+.btn:disabled {
+    opacity: 1;
+    color: rgba(255, 255, 255, 0.8);
+    cursor: not-allowed;
+}
+
+.btn-ico-action {
+    color: $label-text-color;
+    background-color: transparent;
+    height: auto;
+    display: flex;
+    font-weight: 600;
+    padding: 0px;
+    margin: 0px;
+    justify-content: center;
+    align-items: center;
+    min-width: 0px;
+
+    i {
+        color: inherit;
+        margin-right: 5px;
+    }
+
+    &:hover, &:focus, &:focus:hover, &:visited {
+        color: darken($label-text-color, 10);
+        text-decoration: none;
+        box-shadow: none;
+    }
+}

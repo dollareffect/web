@@ -1,0 +1,47 @@
+.de-notify-form-group {
+    margin-left: 25px;
+
+    @media (max-width: 600px) {
+        margin-left: 0px;
+        display: block;
+        text-align: center;
+    }
+    
+    .form-control {
+        border-radius: 25px !important;
+        border: 1px solid rgba(14,70,114,0.15);
+        
+        font-size: 14px;
+        line-height: 21px;
+        padding-right: 70px;
+        padding-left: 20px;
+
+        @media (max-width: 600px) {
+            padding: 15px 20px;
+            width: 100%;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        
+        &:focus:active, &:focus {
+            box-shadow: none !important;
+            outline: none !important;
+        }
+    }
+
+    .form-control::placeholder {
+        color: rgba(14,70,114,0.4);
+    }
+
+    .input-group-addon {
+        position: relative;
+        right: 50px;
+        z-index: 10;
+
+        @media (max-width: 600px) {
+            position: static;
+            display: block;
+            width: 100%;
+        }
+    }
+}
