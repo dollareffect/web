@@ -1,0 +1,21 @@
+.de-footer {
+    background-color: #209CFF;
+    padding: 30px;
+
+    .de-footer-text {
+        color: rgba(255,255,255,0.6) !important;
+        font-size: 14px;
+        line-height: 21px;
+        margin: 0 !important;
+    }
+
+    .de-footer-content {
+        display: flex;
+        justify-content: space-between;
+
+        @media (max-width: 600px) {
+            text-align: center;
+            flex-direction: column;
+        }
+    }
+}

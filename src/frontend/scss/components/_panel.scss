@@ -1,0 +1,23 @@
+.de-panel {
+    display: flex;
+    background-color: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 10px 50px 0 rgba(32,156,255,0.25);
+
+    .featured-image {
+        flex: 0 0 411px;
+        width: 411px;
+        height: 100%;
+
+        img {
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+        }
+    }
+
+    .de-panel-content {
+
+    }
+}

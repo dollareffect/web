@@ -1,0 +1,112 @@
+*{
+    // transition: all 200ms ease-in-out;
+    font-family: $primary-font;
+    color: $body-text-color;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+body {
+    width: 100%;
+    padding: 0;
+    margin: 0 auto;
+    position: relative;
+}
+
+h1, 
+.h1 {
+    font-family: $primary-font;
+    font-weight: 700;
+    font-size: $base-font-size * 2.5;
+    line-height: 1.5;
+    color: $heading-text-color;
+}
+  
+h2, 
+.h2 {
+    font-family: $primary-font;
+    font-weight: 600;
+    font-size: $base-font-size * 2.25;
+    line-height: 1.5;
+    color: $heading-text-color;
+}
+  
+h3, 
+.h3 {
+    font-family: $primary-font;
+    font-weight: 700;
+    font-size: $base-font-size * 1.75;
+    line-height: 1.7;
+    color: $heading-text-color;
+  }
+  
+h4, 
+.h4 {
+    font-family: $primary-font;
+    font-weight: 700;
+    font-size: $base-font-size * 1.5;
+    line-height: 1.8;
+    color: $heading-text-color;
+  }
+  
+h5, 
+.h5 {
+    font-family: $primary-font;
+    font-weight: 600;
+    font-size: $base-font-size * 1.125;
+    line-height: 1.8;
+    color: $label-text-color;
+}
+  
+h6, 
+.h6 {
+    font-family: $primary-font;
+    font-weight: 700;
+    font-size: $base-font-size * 1;
+    line-height: 1.9;
+    color: $label-text-color;
+}
+  
+p {
+    font-family: $primary-font;
+    font-weight: 400;
+    font-size: $base-font-size * 1;
+    line-height: 25px;
+    color: $body-text-color;
+}
+  
+label,
+.label {
+    font-family: $primary-font;
+    font-weight: 600;
+    font-size: $base-font-size * 0.875;
+    line-height: 1.6;
+    color: $label-text-color;
+}
+
+// .label2 {
+//     font-family: $primary-font;
+//     font-weight: 400;
+//     font-size: $base-font-size * 0.625;
+//     letter-spacing: 1.6px;
+//     color: $dark-o-50;
+//     text-transform: uppercase;
+// }
+
+a,
+a:hover {
+    text-decoration: none;
+}
+
+.ag-container {
+    padding: 30px 15px;
+}
+
+textarea {
+    min-height: 190px;
+}
+
+.footer {
+    height: 25px;
+}

@@ -3,7 +3,10 @@ const webpack = require('webpack');
 
 module.exports = {
   devtool: 'source-map',
-  entry: path.resolve(__dirname, 'src/frontend/app') + '/index.js',
+  entry: [
+    path.resolve(__dirname, 'src/frontend/app') + '/index.js',
+    path.resolve(__dirname, 'src/frontend/scss') + '/main.scss',
+  ],
   output: {
     path: path.resolve(__dirname, '__bundle__'),
     filename: 'bundle.js'
@@ -19,6 +22,40 @@ module.exports = {
             presets: ['env', 'react', 'stage-2']
           }
         }
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].css',
+              outputPath: path.resolve(__dirname, '__bundle__/css/'),
+            }
+          },
+          {
+            loader: 'extract-loader'
+          },
+          {
+            loader: "css-loader",
+            options: {
+              sourceMap: true
+            }
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              plugins: () => [require('autoprefixer')],
+              sourceMap: true
+            }
+          },
+          {
+            loader: "sass-loader",
+            options: {
+              sourceMap: true
+            }
+          }
+        ]
       }
     ]
   },

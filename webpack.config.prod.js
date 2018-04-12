@@ -23,6 +23,40 @@ module.exports = {
           }
         }
       },
+      {
+        test: /\.scss$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].css',
+              outputPath: path.resolve(__dirname, '__bundle__/css/'),
+            }
+          },
+          {
+            loader: 'extract-loader'
+          },
+          {
+            loader: "css-loader",
+            options: {
+              sourceMap: true
+            }
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              plugins: () => [require('autoprefixer')],
+              sourceMap: true
+            }
+          },
+          {
+            loader: "sass-loader",
+            options: {
+              sourceMap: true
+            }
+          }
+        ]
+      }
     ]
   },
   resolve: {

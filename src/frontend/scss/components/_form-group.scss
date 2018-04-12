@@ -1,0 +1,25 @@
+.de-form-group {
+    label {
+        font-size: 10px;
+        text-transform: uppercase;
+        color: rgba(14,70,114,0.6);
+        font-weight: 500;
+        letter-spacing: 1px;
+    }
+
+    .form-control {
+        border: 1px solid rgba(14,70,114,0.15);
+        border-radius: 4px;
+        padding: 10px;
+
+        &.error {
+            border: 1px solid rgba(255, 0, 0, 0.5);
+        }
+    }
+
+    &:last-of-type {
+        margin-bottom: 0px;
+    }
+}
+
+

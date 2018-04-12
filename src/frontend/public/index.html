@@ -5,12 +5,314 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Dollar Effect</title>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="__bundle__/css/main.css">
 </head>
 
-<body>
-    <div id="root"></div>
-    <img src="img/sample2.jpg" />
-    <script src="__bundle__/bundle.js"></script>
+<body class="default-bg">
+    <section class="landing-banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-md-7">
+                    <div class="de-logo mt50"><span class="brand-color">Dollar</span>Effect</div>
+                    <button class="btn btn-ico-action" data-toggle="modal" data-target="#modalVideo"><i class="material-icons">play_circle_outline</i>Watch Video</button>
+                    <h1 class="banner-slogan mtb10">What if donating was <span class="underline">not</span> a big decision?</h1>
+                    <p class="mb30">We believe that non-profits should focus more on what they are doing instead of worrying about funds for the following months.</p>
+                    <p class="mb50">The Dollar Effect is a monthly subscription of $1 dollar to a non-profit of your choice.</p>
+                    <div>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#modalDonate">Donate</button>
+                        <button class="btn btn-link" id="btnLearnMore">Learn More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="pt100 pb40" id="works">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 offset-sm-2 text-center mb60">
+                    <div class="section-header">
+                        <h4>How the Dollar Effect Works</h4 >
+                        <p>A small but consistent amount can go a long way.</p>
+                    </div>
+                </div>
+                <div class="col-sm-10 offset-sm-1">
+                    <div class="row">
+                        <div class="col-md-12 col-lg-6">
+                            <div class="de-feature-wrapper">
+                                <div class="feature-icon">
+                                    <img src="/img/oval-heart.svg"/>
+                                </div>
+                                <div class="feature-content">
+                                    <h5>Back non-profits</h5>
+                                    <p>Simply choose non-profit organizations that you would like to back and support.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-lg-6">
+                            <div class="de-feature-wrapper">
+                                <div class="feature-icon">
+                                    <img src="/img/oval-set.svg"/>
+                                </div>
+                                <div class="feature-content">
+                                    <h5>Set and Forget</h5>
+                                    <p>Easy and simple to support non-profits. Plus, the amount is small enough that you can forget about it.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-lg-6">
+                            <div class="de-feature-wrapper">
+                                <div class="feature-icon">
+                                    <img src="/img/oval-dollar.svg"/>
+                                </div>
+                                <div class="feature-content">
+                                    <h5>Small Amount, Big Impact</h5>
+                                    <p>With this, non-profits can rely on something to have a steady source of funds.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-lg-6">
+                            <div class="de-feature-wrapper">
+                                <div class="feature-icon">
+                                    <img src="/img/oval-connected.svg"/>
+                                </div>
+                                <div class="feature-content">
+                                    <h5>Be Connected</h5>
+                                    <p>With this, you will be updated on how the cause you are supporting is doing.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="container">
+        <hr />
+    </div>
+    
+    <!-- <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 offset-sm-2 text-center">
+                    <div class="section-header">
+                        <h3>Featured Non-Profit</h3>
+                        <p>We want to help them focus on helping and creating an impact.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-10 offset-md-1">
+                    <div class="de-panel">
+                        <div class="featured-image">
+                            <img src="/img/org-featured-pic.jpg" alt="Glory Reborn featured photo">
+                        </div>
+                        <div class="de-panel-content">
+                            <h5>Glory Reborn Organization</h5>
+                            <p>Glory Reborn Organization is a non-profit maternity clinic located in Cebu City, Philippines and has been operating since
+                            2003. We annually provide free care to hundreds of pregnant mothers and newborn babies…</p>
+                            <button class="d-block">Read More</button>
+                            <button class="d-block">Back this Non-Profit</button>
+                            <button class="d-block">Share</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr/>
+        </div>
+    </section> -->
+    <section>
+        <div class="container bg-squares">
+            <div class="row">
+                <div class="col-xl-8 offset-xl-2 text-center ptb100">
+                    <h2 class="mb15 de-cta-text">Are you a non-profit organization?</h2>
+                    <p class="mb55">Be part of the Dollar Effect.</p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#modalContact">Contact Us</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="de-footer">
+        <div class="container">
+            <div class="de-footer-content">
+                <p class="de-footer-text">The Dollar Effect 2018</p>
+                <span class="de-footer-text">Made with <i class="material-icons de-footer-text">favorite</i> by <a href='https://www.symph.co/' target="_blank" class="de-footer-text">Symph</a></span>
+            </div>
+        </div>
+    </footer>
+    <form class="form-contact">
+        <div class="modal de-modal fade" tabindex="-1" role="dialog" id="modalContact">
+            <div class="modal-dialog modal-lg de-modal-dialog" role="document">
+                <div class="modal-content de-modal-content">
+                    <div class="modal-header de-modal-header">
+                        <h4 class="modal-title de-modal-title mb5">Be part of the Dollar Effect</h4>
+                        <p class="de-modal-subtitle mb0">We'd love to hear from you.</p>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true"><i class="material-icons">close</i></span>
+                        </button>
+                    </div>
+                    <div class="modal-body de-modal-body p">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="alert alert-danger hidden js-error-message" role="alert"></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <h6 class="de-section-label">Organization</h6>
+                                <div class="form-group de-form-group">
+                                    <label>Organization Name<span class='de-required-indicator'>*</span></label>
+                                    <input type="text" class="form-control" name="org_name" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="form-group de-form-group">
+                                    <label>Org's Facebook Page</label>
+                                    <input type="text" class="form-control" name="org_fb_page" />
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="form-group de-form-group">
+                                    <label>Org's Twitter Page</label>
+                                    <input type="text" class="form-control" name="org_twitter_page" />
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="form-group de-form-group">
+                                    <label>Org's Website</label>
+                                    <input type="text" class="form-control" name="org_website" />
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="mtb40"/>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <h6 class="de-section-label">Contact Person</h6>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group de-form-group">
+                                    <label>Full Name<span class='de-required-indicator'>*</span></label>
+                                    <input type="text" class="form-control" name="full_name" />
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group de-form-group">
+                                    <label>Email<span class='de-required-indicator'>*</span></label>
+                                    <input type="text" class="form-control" name="email"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <div class="form-group de-form-group">
+                                    <label>Country Code<span class='de-required-indicator'>*</span></label>
+                                    <input type="text" class="form-control" name="country_code" />
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group de-form-group">
+                                    <label>Phone<span class='de-required-indicator'>*</span></label>
+                                    <input type="text" class="form-control" name="phone" />
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="mtb40"/>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group de-form-group">
+                                    <label>Message</label>
+                                    <textarea class="form-control" name="message"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer de-modal-footer">
+                        <button type="button" class="btn btn-link" data-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-primary -filled" id="btnSendContact">Send</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <div class="modal de-modal-video fade" id="modalVideo">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">
+                <i class="material-icons">close</i>
+            </span>
+        </button>
+        <div class="modal-dialog modal-lg de-modal-dialog">
+            <div class="modal-content de-modal-content">
+                <div class="modal-body de-modal-body">
+                    <iframe id="youtubeVideo" src="https://www.youtube.com/embed/GCjYPvp09hM?enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal de-modal fade" id="modalConfirm">
+        <div class="modal-dialog modal-lg de-modal-dialog modal-dialog-centered">
+            <div class="modal-content de-modal-content">
+                <div class="modal-body de-modal-body p50 text-center">
+                    <img class="mb30" src="/img/icon-ok.svg" />
+                    <h4>Awesome!</h4>
+                    <p class="mb60">Thank you for your interest to be part of the Dollar Effect. We’ll get back to you as soon as we can.</p>
+                    <button type="button" class="btn btn-primary -filled" data-dismiss="modal">Got it</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal de-modal fade" id="modalDonationConfirm">
+        <div class="modal-dialog modal-lg de-modal-dialog modal-dialog-centered max-width-750">
+            <div class="modal-content de-modal-content">
+                <div class="modal-body de-modal-body p50 text-center">
+                    <img class="mb30" src="/img/icon-ok.svg" />
+                    <h4>Thanks for wanting to support!</h4>
+                    <p class="mb60">We will let you know once the platform is ready to accept donations to organizations of your choice.</p>
+                    <button type="button" class="btn btn-primary -filled" data-dismiss="modal">Got it</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <form class="form-donate">
+    <div class="modal de-modal fade" id="modalDonate">
+        <div class="modal-dialog modal-lg de-modal-dialog modal-dialog-centered max-width-750">
+            <div class="modal-content de-modal-content">
+                <div class="modal-body de-modal-body p50 text-center">
+                    <button type="button" class="close de-modal-close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">
+                            <i class="material-icons">close</i>
+                        </span>
+                    </button>
+                    <img class="mb30" src="/img/icon-heart.svg" />
+                    <h4>We are still in the process of launching</h4>
+                    <p class="mb60">If you would like to be notified when we have more partner organizations, please leave your email address below.</p>
+                    <div class="alert alert-danger hidden js-error-message" role="alert"></div>
+                    <div class="de-notify-form-group form-group input-group">
+                        <input class="form-control" type="text" name="notif_email" placeholder="Your email address">
+                        <button type="submit" data-text="Notify Me" class="btn btn-primary input-group-addon">Notify Me</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </form>
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.0/moment.min.js"></script>
+    <script src="/js/main.js"></script>
+    
+    <!-- <script src="__bundle__/bundle.js"></script> -->
 </body>
 
 </html>
