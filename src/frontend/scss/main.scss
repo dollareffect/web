@@ -9,14 +9,16 @@
 
 @import "pages/landing-page";
 
-@import "components/banner";
-@import "components/panel";
-@import "components/feature-wrapper";
-@import "components/modal";
-@import "components/required-indicator";
-@import "components/form-group";
-@import "components/form-section";
-@import "components/cta";
-@import "components/notify-form-group";
+@import "components/*";
+// @import "components/banner";
+// @import "components/panel";
+// @import "components/feature-wrapper";
+// @import "components/modal";
+// @import "components/required-indicator";
+// @import "components/form-group";
+// @import "components/form-section";
+// @import "components/cta";
+// @import "components/notify-form-group";
+// @import "components/social-links";
 
 @import "layout/footer";

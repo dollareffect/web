@@ -5,19 +5,46 @@
     overflow: hidden;
     box-shadow: 0 10px 50px 0 rgba(32,156,255,0.25);
 
+    @media (max-width: 1024px) {
+        flex-direction: column;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .de-panel-content {
+        padding: 50px 40px;
+        text-align: center;
+
+        @media (max-width: 425px) {
+            padding: 30px 20px;
+        }
+
+        h5 {
+            color: $heading-text-color;
+        }
+    }
+
     .featured-image {
         flex: 0 0 411px;
         width: 411px;
-        height: 100%;
+
+        @media (max-width: 1024px) {
+            width: 100%;
+            max-height: 300px;
+            overflow: hidden;
+            background-image: url(/img/org-featured-pic.jpg);
+            background-size: cover;
+            background-position: center;
+
+            img {
+                display: none;
+            }
+        }
 
         img {
             object-fit: cover;
             height: 100%;
             width: 100%;
         }
-    }
-
-    .de-panel-content {
-
     }
 }
