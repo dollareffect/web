@@ -144,6 +144,13 @@ $(document).ready(function () {
         
     });
 
+    $("#linkFBShare").on("click", function (e) {
+        e.preventDefault();
+        var _href = $(this).attr('href') + encodeURIComponent("http://thedollareffect.com/org/glory-reborn/");
+        window.open(_href, 'fbShareWindow', 'height=450, width=550, top=' + ($(window).height() / 2 - 275) + ', left=' + ($(window).width() / 2 - 225) + ', toolbar=0, location=0, menubar=0, directories=0, scrollbars=0');
+        return false;
+    });
+
     $("#btnLearnMore").on("click", function () {
         $('html, body').animate({
             scrollTop: $("#works").offset().top + 20

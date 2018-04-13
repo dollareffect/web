@@ -1,10 +1,11 @@
 const path = require('path');
 const webpack = require('webpack');
-// const autoprefixer = require('autoprefixer');
+const autoprefixer = require('autoprefixer');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const imageminMozjpeg = require('imagemin-mozjpeg');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const globImporter = require('node-sass-glob-importer');
 
 const ETP = new ExtractTextPlugin({
   filename: 'css/main.css',
@@ -43,10 +44,15 @@ module.exports = {
             {
               loader: 'postcss-loader',
               options: {
-                plugins: [require('autoprefixer')()]
+                plugins: [autoprefixer()]
               }
             },
-            'sass-loader'
+            {
+              loader: 'sass-loader',
+              options: {
+                importer: globImporter()
+              }
+            }
           ]
         })
       }

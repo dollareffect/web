@@ -26,6 +26,13 @@
     -webkit-transition: all .5s ease-in-out;
     transition: all .5s ease-in-out;
 
+    &.--adjust-padding {
+
+        @media (max-width: 425px) {
+            padding: 15px 30px;
+        }
+    }
+
     &:hover, &:focus, &:focus:active {
         background-image: linear-gradient(to right, #25aae1 0%, #68E0CF 51%, #25aae1 100%) !important;
         box-shadow: 0 -2px 13px 0 rgba(14,70,114,0.07), 0 8px 15px 0 rgba(32,156,255,0.3) !important;
@@ -82,5 +89,18 @@
         color: darken($label-text-color, 10);
         text-decoration: none;
         box-shadow: none;
+    }
+}
+
+.btn-ico-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $body-text-color;
+
+    i.material-icons {
+        color: inherit;
+        margin-right: 5px;
+        font-size: inherit !important;
     }
 }

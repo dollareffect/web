@@ -1,0 +1,41 @@
+.de-social-links {
+    padding: 0px;
+    right: -20px;
+    top: 50%;
+    list-style: none;
+    position: absolute;
+    transform: translateY(-50%);
+
+    @media (max-width: 1024px) {
+        display: none;
+    }
+
+    &.--mobile {
+        display: none;
+
+        @media (max-width: 1024px) {
+            position: static;
+            display: block;
+            transform: none;
+        }
+
+        li {
+            @media (max-width: 1024px) {
+                padding: 0 7px;
+                display: inline-block;
+            }
+        }
+    }
+
+    li {
+        padding: 7px 0;
+
+        a {
+            color: rgba(32,156,255,0.8);
+
+            i {
+                color: inherit;
+            }
+        }
+    }
+}

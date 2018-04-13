@@ -1,15 +1,24 @@
 const path = require('path');
 const webpack = require('webpack');
+const autoprefixer = require('autoprefixer');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const globImporter = require('node-sass-glob-importer');
+
+const ETP = new ExtractTextPlugin({
+  filename: 'css/main.css',
+  allChunks: true,
+});
 
 module.exports = {
   devtool: 'source-map',
   entry: [
-    entry: path.resolve(__dirname, 'src/frontend/public/js/') + '/main.js',
+    path.resolve(__dirname, 'src/frontend/public/js/') + '/main.js',
     path.resolve(__dirname, 'src/frontend/scss') + '/main.scss',
   ],
   output: {
-    path: path.resolve(__dirname, '__bundle__'),
-    filename: 'bundle.js'
+    path: path.resolve(__dirname, 'docs/'),
+    filename: 'js/bundle.js'
   },
   module: {
     rules: [
@@ -24,38 +33,28 @@ module.exports = {
         }
       },
       {
-        test: /\.scss$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[name].css',
-              outputPath: path.resolve(__dirname, '__bundle__/css/'),
+        test: /\.(sass|scss)$/i,
+        use: ETP.extract({
+          fallback: 'style-loader',
+          use: [
+            {
+              loader: 'css-loader',
+              options: { minimize: true }
+            },
+            {
+              loader: 'postcss-loader',
+              options: {
+                plugins: [autoprefixer()]
+              }
+            },
+            {
+              loader: 'sass-loader',
+              options: {
+                importer: globImporter()
+              }
             }
-          },
-          {
-            loader: 'extract-loader'
-          },
-          {
-            loader: "css-loader",
-            options: {
-              sourceMap: true
-            }
-          },
-          {
-            loader: 'postcss-loader',
-            options: {
-              plugins: () => [require('autoprefixer')],
-              sourceMap: true
-            }
-          },
-          {
-            loader: "sass-loader",
-            options: {
-              sourceMap: true
-            }
-          }
-        ]
+          ]
+        })
       }
     ]
   },
@@ -64,8 +63,8 @@ module.exports = {
   },
   devServer: {
     historyApiFallback: true,
-    contentBase: "src/frontend/public",
-    publicPath: "/docs/",
+    contentBase: "docs/",
+    publicPath: "docs/",
     port: 9000,
     hot: true,
     inline: true,
@@ -76,6 +75,11 @@ module.exports = {
   },
   devtool: 'inline-source-map',
   plugins: [
+    ETP,
+    new CopyWebpackPlugin([{
+      from: path.resolve(__dirname, 'src/frontend/public/img/'),
+      to: "img/"
+    }]),
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin()
   ]
