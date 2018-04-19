@@ -5,32 +5,8 @@
     <title>Dollar Effect</title>
   </head>
   <body>
+    <h1>404</h1>
     <script type="text/javascript">
-
-      // Remove '&' from text and replace with '%26'
-      function noAmp(text) {
-        return text.split('&').join('%26');
-      }
-
-      // Incase browser doesn't support window.location.origin
-      function getOrigin() {
-        if (window.location.origin) return window.location.origin;
-        return window.location.protocol + "//" + window.location.hostname +
-          (window.location.port ? ':' + window.location.port : '');
-      }
-
-      var origin = getOrigin();
-      var pathname = noAmp(window.location.pathname.split('/').join('%2F'));
-      var query = noAmp(window.location.search.slice(1));
-      var hash = noAmp(window.location.hash.slice(1));
-
-      var redirectTo = origin + '/?' +
-        'redirect=true' +
-        '&pathname=' + pathname +
-        '&query=' + query +
-        '&hash=' + hash;
-
-      window.location.replace(redirectTo);
     </script>
   </body>
 </html>
