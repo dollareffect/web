@@ -39,6 +39,10 @@
             img {
                 display: none;
             }
+
+            &.--let-it-echo {
+                background-image: url(/img/let-it-echo-featured.jpg);
+            }
         }
 
         img {
