@@ -42,7 +42,7 @@
     "imagemin-mozjpeg": "^7.0.0",
     "imagemin-webpack-plugin": "^2.0.0",
     "import-glob-loader": "^1.1.0",
-    "node-sass": "^4.7.2",
+    "node-sass": "^7.0.0",
     "node-sass-glob-importer": "^5.1.2",
     "sass-loader": "^6.0.7",
     "style-loader": "^0.20.3",
